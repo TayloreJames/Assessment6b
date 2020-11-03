@@ -1,0 +1,40 @@
+@model IEnumerable<Assessment6b.Models.JellyBean>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Style)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Style)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rating)
+    </td>
+
+</tr>}
+    </tbody>
+</table>
+
+@using (@Html.BeginForm("Create", "JellyBean", FormMethod.Post))
+{
+<label for="Style">Style</label>
+<input id="Style" name="" type="number" />
+<input id="Submit" type="submit" value="Submit" />
+}
